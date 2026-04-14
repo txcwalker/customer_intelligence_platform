@@ -169,10 +169,21 @@ st.markdown("""
 # Config & paths
 # ------------------------------------------------------------------------------
 
-with open('../config/config.yaml', 'r') as f:
-    config = yaml.safe_load(f)
+from pathlib import Path
 
-PROCESSED_PATH = config['data']['processed_data_path']
+# Use config.yaml if available (local dev), otherwise fall back to relative paths
+_CONFIG_PATH = Path(__file__).parent.parent / 'config' / 'config.yaml'
+
+if _CONFIG_PATH.exists():
+    with open(_CONFIG_PATH, 'r') as f:
+        config = yaml.safe_load(f)
+    PROCESSED_PATH = config['data']['processed_data_path']
+    PLOTS_PATH     = config['data']['plots_path']
+else:
+    # Streamlit Cloud — data committed to repo at data/processed/
+    _BASE_DIR      = Path(__file__).parent.parent
+    PROCESSED_PATH = str(_BASE_DIR / 'data' / 'processed')
+    PLOTS_PATH     = str(_BASE_DIR / 'data' / 'processed')
 
 # Display name mapping — clean names for non-technical audience
 SEGMENT_DISPLAY_NAMES = {

@@ -56,5 +56,13 @@ config/config.yaml
 # Processed data files in src
 src/data/
 
+# Data — ignore everything except dashboard outputs
+data/
+!data/processed/
+!data/processed/ltv_predictions.parquet
+!data/processed/ltv_segment_summary.csv
+!data/processed/pca_cluster_viz.png
+!data/processed/shap_bar.png
+
 # Notebooks
 notebooks/
