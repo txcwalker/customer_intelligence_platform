@@ -1,5 +1,7 @@
 # Virtual Environment
 .venv/
+venv/
+env/
 
 # Data files (too large for git)
 data/raw/
@@ -8,6 +10,9 @@ D:/customer_intelligence_platform/
 # Processed data and models
 data/processed/
 data/models/
+
+# Plots (generated outputs — reproducible from notebooks)
+data/plots/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -25,10 +30,31 @@ __pycache__/
 
 # Environment variables
 .env
+*.env
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Kaggle credentials (never commit this)
 kaggle.json
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Logs
+*.log
+
+# Model artifacts (large binary files)
+*.pkl
+*.joblib
+
+# Local config
+config/config.yaml
+
+# Processed data files in src
+src/data/
+
+# Notebooks
+notebooks/

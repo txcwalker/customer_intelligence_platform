@@ -1,0 +1,32 @@
+# Core data
+pandas==2.3.3
+numpy==2.2.6
+pyarrow==23.0.1
+
+# Machine learning
+scikit-learn==1.7.2
+xgboost==2.1.4
+shap==0.49.1
+joblib==1.5.3
+scipy==1.15.3
+
+# Visualization
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.6.0
+
+# Dashboard
+streamlit==1.56.0
+
+# Config & utilities
+pyyaml==6.0.3
+pydeck==0.9.1
+
+# Jupyter
+ipykernel==7.2.0
+ipython==8.39.0
+jupyter_client==8.8.0
+jupyter_core==5.9.1
+
+# Data download
+kaggle==1.7.4.5

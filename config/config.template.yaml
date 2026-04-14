@@ -1,0 +1,38 @@
+project:
+  name: "Customer Intelligence Platform"
+  version: "1.0"
+
+data:
+  # Update these paths to match your local environment
+  # Large data files should live outside the project directory
+  raw_data_path:       "PATH/TO/YOUR/DATA/raw"
+  processed_data_path: "PATH/TO/YOUR/DATA/processed"
+  models_path:         "PATH/TO/YOUR/DATA/models"
+  plots_path:          "PATH/TO/YOUR/DATA/processed"
+
+files:
+  members:          "members_v3.csv"
+  train:            "train_v2.csv"
+  transactions_v1:  "transactions.csv"
+  transactions_v2:  "transactions_v2.csv"
+  user_logs_v1:     "user_logs.csv"
+  user_logs_v2:     "user_logs_v2.csv"
+
+ingestion:
+  chunk_size:   500000
+  n_splits:     5
+  members_output:                   "members.parquet"
+  train_output:                     "train.parquet"
+  transactions_modeling_output:     "transactions_modeling.parquet"
+  transactions_eda_output:          "transactions_eda.parquet"
+  user_logs_v2_output:              "user_logs_v2_agg.parquet"
+  user_logs_output:                 "user_logs_aggregated.parquet"
+
+modeling:
+  random_state: 42
+  test_size:    0.2
+  n_segments:   4
+
+streamlit:
+  app_title: "Customer Intelligence Platform"
+  theme:     "dark"
